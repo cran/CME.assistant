@@ -1,6 +1,6 @@
 Package: CME.assistant
 Title: Reusable Assisting Functions for Child Mortality Estimation
-Version: 1.1.0
+Version: 1.1.1
 Authors@R: 
     person(given = "Yang",
            family = "Liu",
@@ -18,8 +18,8 @@ RoxygenNote: 7.1.1
 Suggests: knitr, rmarkdown
 VignetteBuilder: knitr
 NeedsCompilation: no
-Packaged: 2020-11-23 11:07:56 UTC; lyhel
+Packaged: 2020-12-15 15:13:06 UTC; lyhel
 Author: Yang Liu [aut, cre] (<https://orcid.org/0000-0001-6557-6439>)
 Maintainer: Yang Liu <lyhello@gmail.com>
 Repository: CRAN
-Date/Publication: 2020-11-25 14:00:09 UTC
+Date/Publication: 2020-12-15 15:50:05 UTC

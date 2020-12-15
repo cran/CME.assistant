@@ -1,7 +1,7 @@
-94107ae68c0e10667607e75021e46a3f *DESCRIPTION
+98e5bbc652cb45fe776e7c78a84422f5 *DESCRIPTION
 2dd1009d405fc1511bdd481b08a6db4a *LICENSE
 10219e8f8539177cc56e4a8b054dc23a *NAMESPACE
-f9a683d5dc47ae12f6392043fa3bff45 *R/1.data_engineering.R
+3e8decb1febed277eca6ba50d4024dd8 *R/1.data_engineering.R
 4e57c080ed7580434701583cbd0b674d *R/2.plots.R
 a33d862596e8753e5e8f6cf5c157b51f *R/3.data_subset_dataset.R
 3b33e1823e602b2ef40578634956a6b3 *R/4.CC_funcs.R
@@ -63,7 +63,7 @@ a501be31a1a5858f5979781134dc7842 *man/get.new.sourceID.Rd
 a79235befd36591c6ca7a53941e58f0d *man/hiv.iso.Rd
 d279fea1cbfd161cd31071c469dc497e *man/load.IGMEinput.dir.Rd
 e58150411bac7c5a38c3985f87a609da *man/load.IGMEoutput.dir.Rd
-8172e7fc84994da617ffc0f7ffb98759 *man/load.final_dir.Rd
+267f64ca8180883600eacda872dffca1 *man/load.final_dir.Rd
 f4cf8dd81559be80e9fe8478c931db7f *man/new_cnames.Rd
 48c9ee25895a33e80233cc63349f4bc3 *man/rbinddataset.Rd
 a65d7f95a5b1cabc9bce2fe293195b93 *man/rbinddatasetNMR.Rd

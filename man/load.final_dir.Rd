@@ -5,7 +5,11 @@
 \title{Return a saved dir_list for total and sex-specific Rates & Deaths_Country
 Summary.csv}
 \usage{
-load.final_dir()
+load.final_dir(year = 2020)
+}
+\arguments{
+\item{year}{default to 2020, can get directory list for 2020 or 2019,
+otherwise return both years}
 }
 \value{
 list of results file directories on Dropbox

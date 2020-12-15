@@ -23,24 +23,44 @@ search.for.file <- function(target.dir, file_name_string, full_path = FALSE){
 #' `load.final_dir` returns file paths of Rates & Deaths_Country Summary.csv
 #' from Aggregate results (final) folders
 #'
+#' @param year default to 2020, can get directory list for 2020 or 2019,
+#'   otherwise return both years
+#'
 #' @return list of results file directories on Dropbox
 #' @export load.final_dir
-load.final_dir <- function(){
-  dir_list <- list(
+load.final_dir <- function(year = 2020){
+  y19 <- list(
     dir_total_2019 = file.path(Sys.getenv("USERPROFILE"),
                                "/Dropbox/UN IGME Data/2019 Round Estimation/Code/Aggregate results (final) 2019-08-15/Rates & Deaths_Country Summary.csv"),
     dir_female_2019 = file.path(Sys.getenv("USERPROFILE"),
                                "/Dropbox/UN IGME Data/2019 Round Estimation/Code/Aggregate results (final) 2019-08-20 (female)/Rates & Deaths(ADJUSTED)_female_Country Summary (negative replaced).csv"),
     dir_male_2019 = file.path(Sys.getenv("USERPROFILE"),
                                "/Dropbox/UN IGME Data/2019 Round Estimation/Code/Aggregate results (final) 2019-08-20 (male)/Rates & Deaths(ADJUSTED)_male_Country Summary.csv"),
+    dir_5_14_2019 = file.path(Sys.getenv("USERPROFILE"),
+                              "Dropbox/IGME 5-14/2019 Round Estimation/Aggregate results (final) 2019-07-29/Rates & Deaths_Country Summary.csv")
+
+  )
+  y20 <- list(
     dir_total_2020 = file.path(Sys.getenv("USERPROFILE"),
                                "/Dropbox/UN IGME Data/2020 Round Estimation/Code/Aggregate results (final) 2020-08-14/Rates & Deaths_Country Summary.csv"),
     dir_female_2020 = file.path(Sys.getenv("USERPROFILE"),
                                 "/Dropbox/UN IGME Data/2020 Round Estimation/Code/Aggregate results (final) 2020-08-16 (female)/Rates & Deaths(ADJUSTED)_female_Country Summary.csv"),
     dir_male_2020 = file.path(Sys.getenv("USERPROFILE"),
-                              "/Dropbox/UN IGME Data/2020 Round Estimation/Code/Aggregate results (final) 2020-08-16 (male)/Rates & Deaths(ADJUSTED)_male_Country Summary.csv")
-
+                              "/Dropbox/UN IGME Data/2020 Round Estimation/Code/Aggregate results (final) 2020-08-16 (male)/Rates & Deaths(ADJUSTED)_male_Country Summary.csv"),
+    dir_5_14_2020 = file.path(Sys.getenv("USERPROFILE"),
+                         "Dropbox/IGME 5-14/2020 Round Estimation/Aggregate results (final) 2020-08-31/Rates & Deaths_Country Summary.csv"),
+    dir_15_24_2020 = file.path(Sys.getenv("USERPROFILE"),
+                              "Dropbox/IGME 5-14/Estimates 10q15/Aggregate results (final) 2020-08-31/Rates & Deaths_Country Summary.csv")
+    #
   )
+  year <- as.character(year)
+  if (year == "2020") {
+    dir_list <- y20
+  } else if (year == "2019") {
+    dir_list <- y19
+  } else {
+    dir_list <- c(y19, y20)
+  }
   # check if all the files still exist (if file names remain unchanged)
   if(!all(sapply(dir_list, file.exists))) stop("Check files that don't exist:\n ", paste(dir_list[!sapply(dir_list, file.exists)], collapse = ",\n "))
   return(dir_list)
@@ -199,7 +219,7 @@ get.CME.UI.data <- function(
     dir_file <- unlist(dir_file)
     if(file.exists(unlist(dir_file))){
       dt <- data.table::fread(dir_file)
-      message("Data loaded: ", dir_file, "\n")
+      message("Data loaded: ", dir_file)
     } else {
       stop("Check: file doesn't exist: ", dir_file)
     }
@@ -238,7 +258,7 @@ get.CME.UI.data <- function(
   } else {
     inds_wanted <- available_inds # otherwise just take all available inds
   }
-  message("Indicators:", paste(inds_wanted, collapse = ", "), "\n")
+  message("Indicators:", paste(inds_wanted, collapse = ", "))
 
   # find all available years
   # available years
