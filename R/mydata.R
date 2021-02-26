@@ -62,8 +62,12 @@
 #' @keywords dataset
 "Rates_Deaths_Country_Summary_2020_UI"
 
-
-#' some pre-stored labels, will update from time to time
+#' a place holder, supply and it will be used in the `get.match` function
 #' @docType data
 #' @keywords labels
-"default_label_1"
+"default_label"
+
+#'shortind_indicator: match shortind to full indicator names
+#' @docType data
+#' @keywords labels
+"shortind_indicator"
