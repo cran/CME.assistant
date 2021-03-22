@@ -1,8 +1,8 @@
-6c74425f2f4495fd17a6dbae15919be9 *DESCRIPTION
+8ce101f562277eb831517ecb2cf0cc3c *DESCRIPTION
 2dd1009d405fc1511bdd481b08a6db4a *LICENSE
 1ecc23c3522e1d0c913992e07033f097 *NAMESPACE
 dfaecf568e0dff480c1c04826a636e50 *R/0.directories.R
-b454b5d36ba6f598cc0a34a0ad06b7a1 *R/1.data_engineering.R
+0a0e5395592ae583086f1639eb633ed5 *R/1.data_engineering.R
 a6ff30a7f0835caa83dbf2e6d56a50e2 *R/2.plots.R
 2b744e982f730670ac44dd35abbcd7ff *R/3.data_subset_dataset.R
 3b33e1823e602b2ef40578634956a6b3 *R/4.CC_funcs.R
@@ -11,8 +11,8 @@ bf3fd0b33b2e44b9e2a0307ea2f3e3d4 *R/dropbox_sync_off.R
 235b4dd1664e4bef04377435a188409a *R/mydata.R
 ccb15409a6b7c2e0eedb80eea68f6562 *README.md
 b46797b52dee8819092dad7b52530767 *build/vignette.rds
-c888ceb5dc53ac6590a6b2aa281dcd53 *data/Rates_Deaths_Country_Summary_2019_UI.rda
-c1b9cb2a7edc352ecd071455c1a89ea5 *data/Rates_Deaths_Country_Summary_2020_UI.rda
+faab54a81eaf3dd89d5984d9c1b97aba *data/Rates_Deaths_Country_Summary_2019_UI.rda
+31819cd157fd43c97b9e1a99e61bd874 *data/Rates_Deaths_Country_Summary_2020_UI.rda
 c6c298e9adf96a3de16ddb21b0f87d77 *data/UNICEF_colors.rda
 36337378b05dc5bdcf58ce98b4e028ce *data/default_label.rda
 c0e8444ea96d1ef8a780649f9b9d362b *data/final_dir_list.rda
@@ -21,9 +21,9 @@ f77651dad56af62382ff027b983b297b *data/new_cnames.rda
 fdd0e913351d5f0b1aeaaf871ad46d9b *data/shortind_indicator.rda
 5cea5578a9e4ab4f982680292de25fda *inst/doc/CMEvignette1.R
 372ce1ac25e64d4a40e89edf36c0a5ca *inst/doc/CMEvignette1.Rmd
-d66a39dbdd0335f591d3f1452e72b752 *inst/doc/CMEvignette1.html
-3ebdc981b01df8c6029ce24b1df9ffd7 *man/Rates_Deaths_Country_Summary_2019_UI.Rd
-90b2b0abd21162e788f6982aa288ab25 *man/Rates_Deaths_Country_Summary_2020_UI.Rd
+fd05410ff44b0fc163869a9473afb1ae *inst/doc/CMEvignette1.html
+46ae7e3a1b351fcf61b64fa76ea29b47 *man/Rates_Deaths_Country_Summary_2019_UI.Rd
+51175d31f13566783459e01d3f662cb2 *man/Rates_Deaths_Country_Summary_2020_UI.Rd
 b9c2ddad1b84f1e0d5f50e8b2c2e5a20 *man/UNICEF_colors.Rd
 37e79a83bdc6fad9efe2d329a786b958 *man/add.Original.Series.Name.Rd
 5e12c2a139b4af5addcc67e7a98260cc *man/add.new.series.imr.Rd

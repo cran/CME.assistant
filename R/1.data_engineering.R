@@ -325,6 +325,8 @@ get.CME.UI.data <- function(
     data.table::setkey(dt_long, ISO3Code)
     # round?
     if(is.numeric(round_digit)) dt_long[, Value:= roundoff(Value, digits = round_digit)]
+    # remove NA
+    dt_long <- dt_long[!is.na(Value)]
 
     # pick output format here ----
     # since everything is made from format long
@@ -332,12 +334,14 @@ get.CME.UI.data <- function(
       return(dt_long)
       # wide all the indicators (incl. rates, deaths, if all selected)
     } else if (format == "wide_ind") {
-      # e.g. OfficialName ISO3Code      X Year      U5MR      NMR       IMR
-      dt_wide_ind <- data.table::dcast(dt_long, ISO3Code + OfficialName  + Year + Quantile + Sex ~ Indicator, value.var = "Value")
+      # e.g. OfficialName    ISO3Code      X Year      U5MR      NMR       IMR
+      formula0 <- paste(paste(idvars, collapse = " + "), "+ Year + Quantile + Sex ~ Indicator" )
+      dt_wide_ind <- data.table::dcast.data.table(dt_long, formula = formula0, value.var = "Value")
       return(dt_wide_ind)
       # wide all the years, all the inds in one column
     } else if (format == "wide_year") {
-      dt_wide_year <- data.table::dcast(dt_long, ISO3Code + OfficialName  +Indicator  + Quantile + Sex ~ Year, value.var = "Value")
+      formula0 <- paste(paste(idvars, collapse = " + "), " + Indicator  + Quantile + Sex ~ Year" )
+      dt_wide_year <- data.table::dcast.data.table(dt_long, formula = formula0, value.var = "Value")
       return(dt_wide_year)
     } else {
       # Two value columns : one for rate, one for deaths
@@ -356,7 +360,8 @@ get.CME.UI.data <- function(
           "Neonatal.Deaths"  = "Neonatal"
         )
         dt_long[, Indicator:= get.match(Indicator, new_list = align_ind)]
-        dt_wide_get <- data.table::dcast(dt_long, ISO3Code + OfficialName  + Indicator  + Year + Quantile + Sex ~ Get, value.var = "Value")
+        formula0 <- paste(paste(idvars, collapse = " + "), "+ Indicator  + Year + Quantile + Sex ~ Get" )
+        dt_wide_get <- data.table::dcast.data.table(dt_long, formula = formula0, value.var = "Value")
         return(dt_wide_get)
       }
     }
